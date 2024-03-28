@@ -1,4 +1,6 @@
-This folder contains a `Dockerfile` which has the riscv toolchain and spike installed. The idea is that you put the file `main.c` into the `src` folder and it will run spike for you. Since the lcb is not able to cross compile, we use the lcb to generate assembly then make it lowercase then compile it with the toolchain. Finally we run spike on it.
+# Riscv32 gcc toolchain
+
+This folder contains a `Dockerfile` which has the riscv toolchain and spike installed. The idea is that you put the file `main.c` into the `src` folder and it will run spike for you. Finally we run spike on it.
 
 Steps:
 
