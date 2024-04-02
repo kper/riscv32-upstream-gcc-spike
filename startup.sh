@@ -11,11 +11,13 @@ cat /code/main.c
 /opt/riscv-cross/bin/riscv32-unknown-linux-gnu-gcc -c -O2 -march=rv32im_zicsr -mabi=ilp32 -o /code/common.o /helper/common.c
 /opt/riscv-cross/bin/riscv32-unknown-linux-gnu-gcc -static -nostartfiles -T/helper/link.ld /code/init.o /code/trap.o /code/vars.spike.o /code/common.o /code/main.o -o /code/main
 
+/opt/riscv-cross/bin/riscv32-unknown-linux-gnu-objdump -d /code/main
+
+file /code/main
+readelf -h /code/main
+
 echo "Compilation was ok"
 echo "Running spike..."
 
-if /opt/spike/bin/spike --isa=rv32im /code/main; then
-	echo "Status Code is $?"
-else
-	echo "Status Code is $?"
-fi
+/opt/spike/bin/spike --isa=rv32im /code/main
+echo "Status Code is $?"
