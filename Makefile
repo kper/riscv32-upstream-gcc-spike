@@ -1,4 +1,5 @@
 NAME=riscv32-gcc-upstream-spike
+pwd=$(CURDIR)
 
 build:
 	docker build -t $(NAME) .
