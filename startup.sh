@@ -19,5 +19,5 @@ readelf -h /code/main
 echo "Compilation was ok"
 echo "Running spike..."
 
-/opt/spike/bin/spike --isa=rv32im /code/main
+/opt/spike/bin/spike -d --isa=rv32im /code/main
 echo "Status Code is $?"
